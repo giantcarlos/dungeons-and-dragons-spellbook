@@ -1,3 +1,12 @@
-const h2 = document.createElement("h2");
-h2.textContent = "This content added by JavaScript";
-document.querySelector("body").appendChild(h2);
+window.addEventListener('DOMContentLoaded', () => {
+    getSpells()
+})
+
+function getSpells() {
+    const ul = document.getElementById('spells')
+    fetch('https://www.dnd5eapi.co/api/spells')
+    .then(res => res.json())
+    .then(data => {
+       console.log(data)
+     })
+}
