@@ -1,9 +1,12 @@
 window.addEventListener('DOMContentLoaded', () => {
     getSpells()
+    document.getElementById("home").addEventListener('click', getSpells)
 })
 
 function getSpells() {
     const ul = document.getElementById('spells-list')
+    const info = document.getElementById('info')
+    info.innerHTML = ''
     fetch('https://www.dnd5eapi.co/api/spells')
     .then(res => res.json())
     .then(data => {

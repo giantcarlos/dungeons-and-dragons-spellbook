@@ -19,16 +19,21 @@ h3 {
     font-size: 16px
 }
 
+#home {
+    margin-top: 30px;
+    margin-left: 120px;
+}
+
 #main {
     background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 90px;
     padding-right: 90px;
 }
 
 #spells-list {
-    padding-top: 20px;
+    padding-top: 15px;
     columns: 5;
 }
 
@@ -41,7 +46,7 @@ h3 {
 footer {
     background-color: rgba(0, 0, 0, 0.4);
     text-align: right;
-    padding-top: 25px;
+    padding-top: 15px;
     padding-bottom: 25px;
     padding-right: 90px;
 }
