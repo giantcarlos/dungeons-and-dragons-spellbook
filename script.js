@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function getSpells() {
     const ul = document.getElementById('spells-list')
     const info = document.getElementById('info')
+    ul.innerHTML = ''
     info.innerHTML = ''
     fetch('https://www.dnd5eapi.co/api/spells')
     .then(res => res.json())
@@ -44,8 +45,9 @@ const displaySpell = (event) => {
         <p>School: ${data.school.index}</p>
         <p>Casting Time: ${data.casting_time}</p>
         <p>Range: ${data.range}</p>
-        <p>Component: ${data.components.join(", ")} (${data.material})</p>
+        <p>Component: ${data.components.join(", ")}</p>
         <p>Duration: ${data.duration}</p>
+
         <p>Classes: ${data.classes}</p>
         <p>${data.desc.join(", ")}</p>
         <p>${data.higher_level.join(", ")}
