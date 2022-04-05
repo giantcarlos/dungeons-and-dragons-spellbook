@@ -6,6 +6,7 @@ body {
     background-size: cover;
     background-attachment: fixed ;
     font-family: 'Helvetica Neue';
+    animation: transitionIn 1s;
 }
 
 h1 {
@@ -18,17 +19,43 @@ h3 {
     font-size: 16px
 }
 
-ul {
-    box-shadow:inset 0 0 0 2000px rgba(71, 52, 60, 0.3);
-    padding-top: 25px;
-    padding-bottom: 25px;
+#main {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 90px;
+    padding-right: 90px;
+}
+
+#spells-list {
+    padding-top: 20px;
     columns: 5;
 }
 
+#info {
+    padding-bottom: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
 footer {
+    background-color: rgba(0, 0, 0, 0.4);
     text-align: right;
-    padding-top: 5px;
+    padding-top: 25px;
     padding-bottom: 25px;
     padding-right: 90px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
