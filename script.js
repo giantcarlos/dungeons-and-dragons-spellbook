@@ -39,16 +39,45 @@ const displaySpell = (event) => {
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        let result = data.classes.map(classes => classes.name);
+
+        let cantripFilter = () => {
+            if (data.level === 0) {
+                result = "Cantrip"
+            } else {
+                result = `${data.level}`
+            }
+            return result;
+        }
+
+        let materialFilter = () => {
+            if (data.material === undefined) {
+                result = "none"
+            } else {
+                result = `(${data.material})`
+            }
+            return result;
+        }
+
+        let consentrationFilter = () => {
+            if (data.concentration === true) {
+                result = "Concentration, "
+            } else {
+                result = ""
+            }
+            return result;
+        }
+
+        let classesResult = data.classes.map(classes => classes.name);
+
         info.innerHTML = `
         <h2>${data.name}</h2><br>
-        <p>Level: ${data.level}</p>
-        <p>School: ${data.school.index}</p>
+        <p>Level: ${cantripFilter()}</p>
+        <p>School: ${data.school.name}</p>
         <p>Casting Time: ${data.casting_time}</p>
         <p>Range: ${data.range}</p>
-        <p>Component: ${data.components.join(", ")}</p>
-        <p>Duration: ${data.duration}</p>
-        <p>Classes: ${result.join(", ")}</p>
+        <p>Components: ${data.components.join(", ")} ${materialFilter()}</p>
+        <p>Duration: ${consentrationFilter()}${data.duration}</p>
+        <p>Classes: ${classesResult.join(", ")}</p>
         <p>${data.desc.join(", ")}</p>
         <p>${data.higher_level.join(", ")}
         `
