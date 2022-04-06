@@ -51,7 +51,7 @@ const displaySpell = (event) => {
 
         let materialFilter = () => {
             if (data.material === undefined) {
-                result = "none"
+                result = ""
             } else {
                 result = `(${data.material})`
             }
