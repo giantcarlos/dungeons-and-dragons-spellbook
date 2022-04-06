@@ -39,6 +39,7 @@ const displaySpell = (event) => {
     .then(res => res.json())
     .then(data => {
         console.log(data)
+        let result = data.classes.map(classes => classes.name);
         info.innerHTML = `
         <h2>${data.name}</h2><br>
         <p>Level: ${data.level}</p>
@@ -47,8 +48,7 @@ const displaySpell = (event) => {
         <p>Range: ${data.range}</p>
         <p>Component: ${data.components.join(", ")}</p>
         <p>Duration: ${data.duration}</p>
-
-        <p>Classes: ${data.classes}</p>
+        <p>Classes: ${result.join(", ")}</p>
         <p>${data.desc.join(", ")}</p>
         <p>${data.higher_level.join(", ")}
         `
