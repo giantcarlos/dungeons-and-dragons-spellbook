@@ -49,6 +49,15 @@ const displaySpell = (event) => {
             return result;
         }
 
+        let ritualFilter = () => {
+            if (data.ritual === true) {
+                result = "(ritual)"
+            } else {
+                result = ""
+            }
+            return result;
+        }
+
         let materialFilter = () => {
             if (data.material === undefined) {
                 result = ""
@@ -73,7 +82,7 @@ const displaySpell = (event) => {
         <h2>${data.name}</h2><br>
         <p>Level: ${cantripFilter()}</p>
         <p>School: ${data.school.name}</p>
-        <p>Casting Time: ${data.casting_time}</p>
+        <p>Casting Time: ${data.casting_time} ${ritualFilter()}</p>
         <p>Range: ${data.range}</p>
         <p>Components: ${data.components.join(", ")} ${materialFilter()}</p>
         <p>Duration: ${consentrationFilter()}${data.duration}</p>
