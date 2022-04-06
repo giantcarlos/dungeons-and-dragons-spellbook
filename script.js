@@ -51,7 +51,7 @@ const displaySpell = (event) => {
 
         let ritualFilter = () => {
             if (data.ritual === true) {
-                result = "(ritual)"
+                result = "(Ritual)"
             } else {
                 result = ""
             }
@@ -69,7 +69,7 @@ const displaySpell = (event) => {
 
         let consentrationFilter = () => {
             if (data.concentration === true) {
-                result = "Concentration, "
+                result = "(Concentration)"
             } else {
                 result = ""
             }
@@ -85,7 +85,7 @@ const displaySpell = (event) => {
         <p>Casting Time: ${data.casting_time} ${ritualFilter()}</p>
         <p>Range: ${data.range}</p>
         <p>Components: ${data.components.join(", ")} ${materialFilter()}</p>
-        <p>Duration: ${consentrationFilter()}${data.duration}</p>
+        <p>Duration: ${data.duration} ${consentrationFilter()}</p>
         <p>Classes: ${classesResult.join(", ")}</p>
         <p>${data.desc.join(", ")}</p>
         <p>${data.higher_level.join(", ")}
