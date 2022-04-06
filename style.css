@@ -33,6 +33,10 @@ h3 {
     padding-right: 90px;
 }
 
+#home {
+    cursor: pointer;
+}
+
 #spells-list {
     padding-top: 20px;
     columns: 5;
