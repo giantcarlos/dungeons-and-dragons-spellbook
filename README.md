@@ -27,7 +27,6 @@ Dungeons & Dragons Spellbook is a single page application that serves as a gloss
 
 ### Github
 ---
-<br>
 
 https://github.com/giantcarlos/dungeons-and-dragons-spellbook
 
@@ -35,6 +34,5 @@ https://github.com/giantcarlos/dungeons-and-dragons-spellbook
 
 ### Credits
 ---
-<br>
 
 https://www.dnd5eapi.co/
