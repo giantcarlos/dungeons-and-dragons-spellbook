@@ -47,6 +47,7 @@ h3 {
     padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 30px;
+    line-height: 1.25;
 }
 
 footer {
@@ -74,8 +75,6 @@ a {
     
     #main {
         font-size: 16px;
-        padding-top: 10px;
-        padding-bottom: 10px;
         padding-left: 90px;
         padding-right: 90px;
     }
@@ -86,9 +85,9 @@ a {
     }
 
     #info {
-        padding-bottom: 30px;
         padding-left: 200px;
         padding-right: 200px;
+        line-height: normal;
     }
 
     #home {
@@ -97,11 +96,6 @@ a {
     }
 
     footer {
-        background-color: rgba(0, 0, 0, 0.4);
-        text-align: right;
-        padding-top: 15px;
-        padding-bottom: 25px;
-        padding-right: 90px;
         font-size: 16px;
     }
 
