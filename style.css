@@ -89,13 +89,13 @@ a {
    
     #spells-list {
         columns: 5;
-        line-height: normal;
+        line-height: 1.25;
     }
 
     #info {
         padding-left: 200px;
         padding-right: 200px;
-        line-height: normal;
+        line-height: 1.25;
     }
 
     #home {
