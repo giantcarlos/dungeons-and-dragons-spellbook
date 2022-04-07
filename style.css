@@ -13,25 +13,27 @@ header {
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 48px;
 }
 
 h3 {
-    font-size: 16px
+    font-size: 28px;
 }
 
 #home {
     margin-top: 20px;
-    margin-left: auto;
+    margin-left: 30px;
     cursor: pointer;
+    font-size: 36px;
 }
 
 #main {
+    font-size: 32px;
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 90px;
-    padding-right: 90px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #spells-list {
@@ -41,8 +43,8 @@ h3 {
 
 #info {
     padding-bottom: 30px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 footer {
@@ -51,6 +53,7 @@ footer {
     padding-top: 15px;
     padding-bottom: 25px;
     padding-right: 90px;
+    font-size: 28px;
 }
 
 a {
@@ -59,12 +62,44 @@ a {
 }
 
 @media only screen and (min-device-width: 500px) {
+    h1 {
+        font-size: 36px;
+    }
+    
+    h3 {
+        font-size: 16px;
+    }
+    
+    #main {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+   
     #spells-list {
         columns: 5;
     }
 
+    #info {
+        padding-bottom: 30px;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
     #home {
         margin-left: 30px;
+        font-size: 14px;
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, 0.4);
+        text-align: right;
+        padding-top: 15px;
+        padding-bottom: 25px;
+        padding-right: 90px;
+        font-size: 16px;
     }
 
 }
