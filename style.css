@@ -3,8 +3,10 @@ body {
     background-color: black;
     background-image: url(img/spellbookwallpaper.webp); 
     min-height: 100%;
-    background-size: cover;
-    background-attachment: fixed ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     font-family: 'Helvetica Neue';
 }
 
@@ -29,8 +31,8 @@ h3 {
 }
 
 #main {
-    font-size: 32px;
     background-color: rgba(0, 0, 0, 0.4);
+    font-size: 32px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -65,6 +67,12 @@ a {
 }
 
 @media only screen and (min-device-width: 500px) {
+    body {
+        background-size: cover;
+        background-attachment: fixed ;
+        background-position: 80% 20%;
+    }
+
     h1 {
         font-size: 42px;
     }
