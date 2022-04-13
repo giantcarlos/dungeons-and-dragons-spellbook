@@ -33,6 +33,12 @@ Dungeons & Dragons Spellbook is a single page application that serves as a gloss
 - https://github.com/giantcarlos/dungeons-and-dragons-spellbook
 
 
+### **Project Blog**
+---
+
+- https://medium.com/@giantainocarlos/dungeons-dragons-the-dom-why-we-manipulate-the-dom-d64eb61ea2e9?source=friends_link&sk=ed6f4df7b0b6d63a463ac5ee0333665e
+
+
 ### **Credits**
 ---
 
