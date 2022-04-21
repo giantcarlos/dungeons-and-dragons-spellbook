@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     getSpells()
-    document.getElementById("home").addEventListener('click', getSpells)
+    document.getElementById("home").addEventListener('click', getSpells) 
 })
 
 function getSpells() {
@@ -11,9 +11,9 @@ function getSpells() {
     fetch('https://www.dnd5eapi.co/api/spells')
     .then(res => res.json())
     .then(data => {
+        console.log(data)
         dataArray = Object.entries(data);
-        secondArray = dataArray["1"];
-        spellArray = secondArray["1"];
+        spellArray = dataArray["1"]["1"];
         spellArray.forEach(spell => {
             ul.innerHTML += `
             <li><a href="#" data-url="${spell.url}">${spell.name}</a></li>
