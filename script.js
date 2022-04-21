@@ -1,20 +1,36 @@
 window.addEventListener('DOMContentLoaded', () => {
     getSpells()
     document.getElementById("home").addEventListener('click', getSpells) 
+    document.getElementById("classes").addEventListener('change', selectClass)
 })
 
+const ul = document.getElementById('spells-list')
+const info = document.getElementById('info')
+
 function getSpells() {
-    const ul = document.getElementById('spells-list')
-    const info = document.getElementById('info')
     ul.innerHTML = ''
     info.innerHTML = ''
     fetch('https://www.dnd5eapi.co/api/spells')
     .then(res => res.json())
     .then(data => {
         console.log(data)
-        dataArray = Object.entries(data);
-        spellArray = dataArray["1"]["1"];
-        spellArray.forEach(spell => {
+        data.results.forEach(spell => {
+            ul.innerHTML += `
+            <li><a href="#" data-url="${spell.url}">${spell.name}</a></li>
+            `
+       })
+       attachLinks()
+     })
+}
+
+function selectClass(event) {
+    ul.innerHTML = ''
+    info.innerHTML = ''
+    fetch('https://www.dnd5eapi.co/api/classes/'+`${event.target.value}`+'/spells')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        data.results.forEach(spell => {
             ul.innerHTML += `
             <li><a href="#" data-url="${spell.url}">${spell.name}</a></li>
             `
@@ -32,15 +48,13 @@ const attachLinks = () => {
 
 const displaySpell = (event) => {
     console.log(event.target.dataset.url)
-    const info = document.getElementById('info')
-    const ul = document.getElementById('spells-list')
     ul.innerHTML = ''
     fetch('https://www.dnd5eapi.co' + `${event.target.dataset.url}`)
     .then(res => res.json())
     .then(data => {
         console.log(data)
 
-        let cantripFilter = () => {
+        const cantripFilter = () => {
             if (data.level === 0) {
                 result = "Cantrip"
             } else {
@@ -49,7 +63,7 @@ const displaySpell = (event) => {
             return result;
         }
 
-        let ritualFilter = () => {
+        const ritualFilter = () => {
             if (data.ritual === true) {
                 result = "(Ritual)"
             } else {
@@ -58,7 +72,7 @@ const displaySpell = (event) => {
             return result;
         }
 
-        let materialFilter = () => {
+        const materialFilter = () => {
             if (data.material === undefined) {
                 result = ""
             } else {
@@ -67,7 +81,7 @@ const displaySpell = (event) => {
             return result;
         }
 
-        let consentrationFilter = () => {
+        const consentrationFilter = () => {
             if (data.concentration === true) {
                 result = "(Concentration)"
             } else {
@@ -76,7 +90,7 @@ const displaySpell = (event) => {
             return result;
         }
 
-        let classesResult = data.classes.map(classes => classes.name);
+        const classesResult = data.classes.map(classes => classes.name);
 
         info.innerHTML = `
         <h2>${data.name}</h2><br>
