@@ -55,7 +55,7 @@ h3 {
     padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 30px;
-    line-height: 1.25;
+    line-height: 1.5;
 }
 
 footer {
@@ -88,7 +88,7 @@ a {
     }
     
     #main {
-        padding-left: 90px;
+        padding-left: 125px;
         padding-right: 90px;
         font-size: 16px;
     }
@@ -99,13 +99,11 @@ a {
 
     #spells-list {
         columns: 5;
-        line-height: 1.25;
     }
 
     #info {
         padding-left: 200px;
         padding-right: 200px;
-        line-height: 1.25;
     }
 
     #home {
