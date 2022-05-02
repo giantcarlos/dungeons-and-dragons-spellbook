@@ -55,39 +55,19 @@ const displaySpell = (event) => {
         console.log(data)
 
         const cantripFilter = () => {
-            if (data.level === 0) {
-                result = "Cantrip"
-            } else {
-                result = `${data.level}`
-            }
-            return result;
+            data.level === 0 ? "Cantrip" : `${data.level}`;
         }
 
         const ritualFilter = () => {
-            if (data.ritual === true) {
-                result = "(Ritual)"
-            } else {
-                result = ""
-            }
-            return result;
+            data.ritual === true ? "(Ritual)" : "";
         }
 
         const materialFilter = () => {
-            if (data.material === undefined) {
-                result = ""
-            } else {
-                result = `(${data.material})`
-            }
-            return result;
+            data.material === undefined ? "" : `(${data.material})`;
         }
 
         const consentrationFilter = () => {
-            if (data.concentration === true) {
-                result = "(Concentration)"
-            } else {
-                result = ""
-            }
-            return result;
+            data.concentration === true ? "(Concentration)" : "";
         }
 
         const classesResult = data.classes.map(classes => classes.name);
