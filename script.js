@@ -53,34 +53,15 @@ const displaySpell = (event) => {
     .then(res => res.json())
     .then(data => {
         console.log(data)
-
-        const cantripFilter = () => {
-            data.level === 0 ? "Cantrip" : `${data.level}`;
-        }
-
-        const ritualFilter = () => {
-            data.ritual === true ? "(Ritual)" : "";
-        }
-
-        const materialFilter = () => {
-            data.material === undefined ? "" : `(${data.material})`;
-        }
-
-        const consentrationFilter = () => {
-            data.concentration === true ? "(Concentration)" : "";
-        }
-
-        const classesResult = data.classes.map(classes => classes.name);
-
         info.innerHTML = `
         <h2>${data.name}</h2><br>
-        <p>Level: ${cantripFilter()}</p>
+        <p>Level: ${(data.level === 0) ? "Cantrip" : `${data.level}`}</p>
         <p>School: ${data.school.name}</p>
-        <p>Casting Time: ${data.casting_time} ${ritualFilter()}</p>
+        <p>Casting Time: ${data.casting_time} ${(data.ritual === true) ? "(Ritual)" : ""}</p>
         <p>Range: ${data.range}</p>
-        <p>Components: ${data.components.join(", ")} ${materialFilter()}</p>
-        <p>Duration: ${data.duration} ${consentrationFilter()}</p>
-        <p>Classes: ${classesResult.join(", ")}</p>
+        <p>Components: ${data.components.join(", ")} ${(data.material === undefined) ? "" : `(${data.material})`}</p>
+        <p>Duration: ${data.duration} ${(data.concentration === true) ? "(Concentration)" : ""}</p>
+        <p>Classes: ${(data.classes.map(classes => classes.name)).join(", ")}</p>
         <p>${data.desc.join(", ")}</p>
         <p>${data.higher_level.join(", ")}
         `
