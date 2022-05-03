@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const ul = document.getElementById('spells-list')
 const info = document.getElementById('info')
 
-function getSpells() {
+const getSpells = () => {
     ul.innerHTML = ''
     info.innerHTML = ''
     fetch('https://www.dnd5eapi.co/api/spells')
@@ -19,11 +19,11 @@ function getSpells() {
             <li><a href="#" data-url="${spell.url}">${spell.name}</a></li>
             `
        })
-       attachLinks()
+       attachClickListener()
      })
 }
 
-function selectClass(event) {
+const selectClass = (event) => {
     ul.innerHTML = ''
     info.innerHTML = ''
     fetch('https://www.dnd5eapi.co/api/classes/'+`${event.target.value}`+'/spells')
@@ -35,11 +35,11 @@ function selectClass(event) {
             <li><a href="#" data-url="${spell.url}">${spell.name}</a></li>
             `
        })
-       attachLinks()
+       attachClickListener()
      })
 }
 
-const attachLinks = () => {
+const attachClickListener = () => {
     const spells = document.querySelectorAll('a')
     spells.forEach((spell) => {
         spell.addEventListener('click', displaySpell)
