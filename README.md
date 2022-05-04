@@ -8,6 +8,7 @@ Dungeons & Dragons Spellbook is a single page application that serves as a gloss
 
 - Up to date access to over 300+ official 5th edition spells.
 - Filter spells by character class.
+- Search bar for easy spell access.
 - Detailed spell descriptions including casting time, range, duration, material components, and class requirements. 
 
 
