@@ -30,6 +30,12 @@ h3 {
     color: black;
 }
 
+form {
+    font-size: 16px;
+    margin-top: 25px;
+    margin-left: 30px;
+}
+
 #main {
     font-size: 32px;
     background-color: rgba(0, 0, 0, 0.6);
