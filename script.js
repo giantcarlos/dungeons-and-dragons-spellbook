@@ -10,6 +10,7 @@ const info = document.getElementById('info')
 const getSpells = () => {
     ul.innerHTML = ''
     info.innerHTML = ''
+    document.getElementById('classes').selectedIndex = 0;
     fetch('https://www.dnd5eapi.co/api/spells')
     .then(res => res.json())
     .then(data => {
